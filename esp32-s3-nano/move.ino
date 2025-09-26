@@ -18,12 +18,21 @@ void setup() {
 
 void loop() {
   blink(3);
+
+  altTab();
+
   rndX = random(500, 1000);
   rndY = random(500, 1000);
   rndDelaySec = random(5, 15);
   moveAndReturn(rndX, rndY);
   blink(rndDelaySec);
   delay(rndDelaySec * 1000);
+}
+
+void altTab() {
+  Keyboard.press(KEY_LEFT_ALT);
+  Keyboard.press(KEY_TAB);
+  Keyboard.releaseAll();
 }
 
 void moveAndReturn(int x, int y) {
@@ -40,4 +49,3 @@ void blink(int times) {
         delay(50);
   }
 }
-
